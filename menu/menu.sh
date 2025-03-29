@@ -22,16 +22,16 @@ DATE=$(date +%m/%d/%Y)
 DATE2=$(date -R | cut -d " " -f -5)
 IPVPS=$(curl -s ipinfo.io/ip?token=7578ac19afd785 )
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Isadmin=$(curl -sS https://raw.githubusercontent.com/kotajakarta/script/main/ip | grep $MYIP | awk '{print $5}')
-Exp2=$(curl -sS https://raw.githubusercontent.com/kotajakarta/script/main/ip | grep $MYIP | awk '{print $3}')
+Isadmin=$(curl -sS https://raw.githubusercontent.com/rosi606/R051VPN/main/ip | grep $MYIP | awk '{print $5}')
+Exp2=$(curl -sS https://raw.githubusercontent.com/rosi606/R051VPN/main/ip | grep $MYIP | awk '{print $3}')
 export RED='\033[0;31m'
 export GREEN='\033[0;32m'
 
-Name=$(curl -sS https://raw.githubusercontent.com/kotajakarta/script/main/ip | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/rosi606/R051VPN/main/ip | grep $MYIP | awk '{print $2}')
 ipsaya=$(curl -s -4 icanhazip.com)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/kotajakarta/script/main/ip"
+data_ip="https://raw.githubusercontent.com/rosi606/R051VPN/main/ip"
 checking_sc() {
     useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
     if [[ $date_list < $useexp ]]; then
@@ -63,16 +63,16 @@ echo -e "KODE SALAH SILAHKAN MASUKKAN ULANG KODENYA"
 key
 fi
 clear
-LIST=$(curl -sS https://raw.githubusercontent.com/SatanTech/license/main/key | grep $kode | awk '{print $2}')
-Key=$(curl -sS https://raw.githubusercontent.com/SatanTech/license/main/key | grep $kode | awk '{print $3}')
-KEY2=$(curl -sS https://raw.githubusercontent.com/SatanTech/license/main/key | grep $kode | awk '{print $4}')
-ADMIN=$(curl -sS https://raw.githubusercontent.com/SatanTech/license/main/key | grep $kode | awk '{print $5}')
-TOTALIP=$(curl -sS https://raw.githubusercontent.com/SatanTech/license/main/key | grep $kode | awk '{print $6}')
-U2=$(curl -sS https://raw.githubusercontent.com/kotajakarta/script/main/ip | grep $MYIP | awk '{print $2}')
-U3=$(curl -sS https://raw.githubusercontent.com/kotajakarta/script/main/ip | grep $MYIP | awk '{print $3}')
-U4=$(curl -sS https://raw.githubusercontent.com/kotajakarta/script/main/ip | grep $MYIP | awk '{print $4}')
-U5=$(curl -sS https://raw.githubusercontent.com/kotajakarta/script/main/ip | grep $MYIP | awk '{print $5}')
-U6=$(curl -sS https://raw.githubusercontent.com/kotajakarta/script/main/ip | grep $MYIP | awk '{print $6}')
+LIST=$(curl -sS https://raw.githubusercontent.com/rosi606/license/main/key | grep $kode | awk '{print $2}')
+Key=$(curl -sS https://raw.githubusercontent.com/rosi606/license/main/key | grep $kode | awk '{print $3}')
+KEY2=$(curl -sS https://raw.githubusercontent.com/rosi606/license/main/key | grep $kode | awk '{print $4}')
+ADMIN=$(curl -sS https://raw.githubusercontent.com/rosi606/license/main/key | grep $kode | awk '{print $5}')
+TOTALIP=$(curl -sS https://raw.githubusercontent.com/rosi606/license/main/key | grep $kode | awk '{print $6}')
+U2=$(curl -sS https://raw.githubusercontent.com/rosi606/R051VPN/main/ip | grep $MYIP | awk '{print $2}')
+U3=$(curl -sS https://raw.githubusercontent.com/rosi606/R051VPN/main/ip | grep $MYIP | awk '{print $3}')
+U4=$(curl -sS https://raw.githubusercontent.com/rosi606/R051VPN/main/ip | grep $MYIP | awk '{print $4}')
+U5=$(curl -sS https://raw.githubusercontent.com/rosi606/R051VPN/main/ip | grep $MYIP | awk '{print $5}')
+U6=$(curl -sS https://raw.githubusercontent.com/rosi606/R051VPN/main/ip | grep $MYIP | awk '{print $6}')
 MYIP=$(curl -sS ipv4.icanhazip.com)
 
 if [[ $kode == "SFGG" ]]; then
@@ -89,7 +89,7 @@ USERGIT=$(cat /etc/github/username)
 hhari=$(date -d "30 days" +"%Y-%m-%d")
 mkdir /root/rmbl
 cd /root/rmbl
-wget https://raw.githubusercontent.com/kotajakarta/script/main/ip >/dev/null 2>&1
+wget https://raw.githubusercontent.com/rosi606/R051VPN/main/ip >/dev/null 2>&1
 
 if [ "$ADMIN" = "ON" ]; then
 sed -i '/# RESELLER/a ### $author $hhari $MYIP $ADMIN $TOTALIP' /root/rmbl/ipmini
@@ -125,7 +125,7 @@ USERGIT=$(cat /etc/github/username)
 hhari=$(date -d "$KEY2 days" +"%Y-%m-%d")
 mkdir /root/rmbl
 cd /root/rmbl
-wget https://raw.githubusercontent.com/kotajakarta/script/main/ip >/dev/null 2>&1
+wget https://raw.githubusercontent.com/rosi606/R051VPN/main/ip >/dev/null 2>&1
 if [ "$ADMIN" = "ON" ]; then
 sed -i '/# RESELLER/a ### $author $hhari $MYIP $ADMIN $TOTALIP' /root/rmbl/ipmini
 else
@@ -147,7 +147,7 @@ git remote add origin https://github.com/${USERGIT}/permission >/dev/null 2>&1
 git push -f https://${APIGIT}@github.com/${USERGIT}/permission >/dev/null 2>&1
 sleep 0.5
 rm ipmini
-wget https://raw.githubusercontent.com/kotajakarta/script/license/main/key >/dev/null 2>&1
+wget https://raw.githubusercontent.com/rosi606/R051VPN/license/main/key >/dev/null 2>&1
 if [ "$ADMIN" = "ON" ]; then
 sed -i "/^### $LIST $Key $KEY2 $ADMIN $TOTALIP/d" /root/rmbl/key
 else
@@ -293,7 +293,7 @@ fi
 
 rm -rf /etc/status
 
-wget -q -O /etc/status "https://raw.githubusercontent.com/kotajakarta/script/main/status"
+wget -q -O /etc/status "https://raw.githubusercontent.com/rosi606/R051VPN/main/status"
 
 
 # // SSH Websocket Proxy
@@ -332,12 +332,12 @@ echo -e "$COLOR1╰════════════════════�
 echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
 echo -e "$COLOR1 ${NC}  $COLOR1[INFO]${NC} Check for Script updates"
 sleep 2
-wget -q -O /root/install_up.sh "https://raw.githubusercontent.com/kotajakarta/script/main/menu/install-up.sh" && chmod +x /root/install_up.sh
+wget -q -O /root/install_up.sh "https://raw.githubusercontent.com/rosi606/R051VPN/main/menu/install-up.sh" && chmod +x /root/install_up.sh
 sleep 2
 ./install_up.sh
 rm /root/install_up.sh
 rm /opt/.ver
-version_up=$( curl -sS https://raw.githubusercontent.com/kotajakarta/script/main/versi)
+version_up=$( curl -sS https://raw.githubusercontent.com/rosi606/R051VPN/main/versi)
 echo "$version_up" > /opt/.verecho "$version_up" > /opt/.ver
 echo -e "$COLOR1 ${NC}  $COLOR1[INFO]${NC} Successfully Up To Date!"
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
@@ -366,7 +366,7 @@ upminutes=`uptime -p | awk '{print $4,$5}' | cut -d , -f1`
 uptimecek=`uptime -p | awk '{print $6,$7}' | cut -d , -f1`
 cekup=`uptime -p | grep -ow "day"`
 IPVPS=$(curl -s ipinfo.io/ip )
-serverV=$( curl -sS https://raw.githubusercontent.com/kotajakarta/script/main/versi)
+serverV=$( curl -sS https://raw.githubusercontent.com/rosi606/R051VPN/main/versi)
 if [ "$Isadmin" = "ON" ]; then
 uis="${COLOR1}Premium ADMIN VIP$NC"
 else
@@ -483,7 +483,7 @@ d2=$(date -d "$today" +%s)
 certificate=$(( (d1 - d2) / 86400 ))
 
 function bannner(){
-wget -O /etc/issue.net "https://raw.githubusercontent.com/kotajakarta/script/main/install/issue2.net" &> /dev/null
+wget -O /etc/issue.net "https://raw.githubusercontent.com/rosi606/R051VPN/main/install/issue2.net" &> /dev/null
 menu
 }
 echo -e "$COLOR1╭═══════════════════════════════════════════════════╮${NC}"
